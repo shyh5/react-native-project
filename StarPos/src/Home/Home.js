@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, Button,StyleSheet, TouchableOpacity} from 'react-native';
 
 export default class Home extends Component {
 
     pushClick = () => {
-        this.props.navigation.navigate('HomeDetail');
+        this.props.navigation.navigate('Find');
     };
 
     componentDidMount(): void {
@@ -15,14 +15,27 @@ export default class Home extends Component {
         console.log("A componentWillUnmount方法被调用")
     }
 
+    static navigationOptions: {
+        title:'首页'
+    };
+
     render() {
+
+        const {navigation} = this.props;
+
         return (
             <View style={styles.container}>
-                <TouchableOpacity
-                    style={styles.btn}
+                <Button
+                    title={"点击跳转到下一页"}
                     onPress={this.pushClick}>
-                    <Text style={styles.btnTitle}>点击跳转到下一页</Text>
-                </TouchableOpacity>
+                </Button>
+
+                <Button
+                title={"跳转到tabbar"}
+                onPress={() => {
+                    navigation.navigate("Bottom");
+                }}>
+                </Button>
             </View>
         );
     }

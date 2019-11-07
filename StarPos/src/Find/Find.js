@@ -2,10 +2,15 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
 export default class Finder extends Component {
+
+    static navigationOptions: {
+        title:'发现'
+    };
+
     render() {
         return (
             <View style={styles.container}>
-                <Text>finder 页面</Text>
+                <Text>发现页面</Text>
             </View>
         );
     }

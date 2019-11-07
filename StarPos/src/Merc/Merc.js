@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-export default class Finder extends Component {
+export default class Merc extends Component {
+
+    static navigationOptions: {
+        title:'商户'
+    };
+
     render() {
         return (
             <View style={styles.container}>
-                <Text>finder 页面</Text>
+                <Text>Merc 页面</Text>
             </View>
         );
     }

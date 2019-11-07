@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-export default class Finder extends Component {
+export default class Mine extends Component {
+
+    static navigationOptions: {
+        title:'我的'
+    };
+
     render() {
         return (
             <View style={styles.container}>
-                <Text>finder 页面</Text>
+                <Text>Mine 页面</Text>
             </View>
         );
     }

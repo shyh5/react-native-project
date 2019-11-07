@@ -5,7 +5,7 @@ export default class TabNavigator extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>finder 页面</Text>
+                <Text>页面</Text>
             </View>
         );
     }
