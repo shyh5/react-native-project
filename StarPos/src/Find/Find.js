@@ -1,16 +1,44 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {
+    View,
+    Image,
+    StyleSheet,
+    TouchableOpacity,
+    Alert,
+} from 'react-native';
 
 export default class Finder extends Component {
 
     static navigationOptions: {
-        title:'发现'
+        title:''
     };
 
     render() {
         return (
             <View style={styles.container}>
-                <Text>发现页面</Text>
+                <View style={styles.vs}>
+                    <TouchableOpacity onPress={() => {
+                        this.props.navigation.navigate("FindDetail");
+                    }}>
+                        <Image
+                            style={styles.img}
+                            source={require("./img/dongjieban.png")} >
+                        </Image>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.vs}>
+                    <Image
+                        style={styles.img}
+                        source={require("./img/educhaxun.png")}>
+                    </Image>
+                </View>
+                <View style={styles.vs}>
+                    <Image
+                        style={styles.img}
+                        source={require("./img/jiejiari.png")}>
+                    </Image>
+                </View>
+
             </View>
         );
     }
@@ -18,27 +46,20 @@ export default class Finder extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        flex:1,
+        justifyContent:'flex-start',
+        backgroundColor:'#F9F9F9'
     },
 
-    btn: {
-        height: 50,
-        width: 150,
-        borderRadius: 25,
-        backgroundColor: 'green',
-        justifyContent: 'center',
+    vs: {
+        height:90,
+        marginHorizontal:15,
+        marginVertical:5
     },
 
-    btnTitle: {
-        color: 'white',
-        fontSize: 22,
-        textAlign: 'center',
-    },
-
-    btnGroup: {
-        backgroundColor: 'cyan',
-    },
-
+    img:{
+        width:'100%',
+        height:'100%',
+        resizeMode: "cover",
+    }
 });

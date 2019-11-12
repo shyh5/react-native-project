@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {View, Text, Button,StyleSheet, TouchableOpacity} from 'react-native';
 
+
+
 export default class Home extends Component {
 
     pushClick = () => {
-        this.props.navigation.navigate('Find');
+        this.props.navigation.navigate('HomeDetail',{ name: '详情页面'});
     };
 
     componentDidMount(): void {
@@ -26,16 +28,44 @@ export default class Home extends Component {
         return (
             <View style={styles.container}>
                 <Button
-                    title={"点击跳转到下一页"}
+                    title={"点击跳转到详情"}
                     onPress={this.pushClick}>
                 </Button>
 
                 <Button
-                title={"跳转到tabbar"}
+                title={"跳转到布局视图1"}
                 onPress={() => {
-                    navigation.navigate("Bottom");
+                    navigation.navigate("FlexOne");
                 }}>
                 </Button>
+
+                <Button
+                    title={"跳转props 学习"}
+                    onPress={() => {
+                        navigation.navigate("PropsVC");
+                    }}>
+                </Button>
+                <Button
+                    title={"跳转state"}
+                    onPress={() => {
+                        navigation.navigate("StateVC");
+                    }}>
+                </Button>
+
+                <Button
+                    title={"跳转ref"}
+                    onPress={() => {
+                        navigation.navigate("RefVC");
+                    }}>
+                </Button>
+
+                <Button
+                    title={"跳转到finder"}
+                    onPress={() => {
+                        navigation.navigate("Finder");
+                    }}>
+                </Button>
+
             </View>
         );
     }

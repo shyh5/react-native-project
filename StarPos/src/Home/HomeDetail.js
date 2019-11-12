@@ -2,10 +2,13 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
 export default class HomeDetail extends Component {
+
+
     render() {
+        let {props} = this.props;
         return (
             <View style={styles.container}>
-                <Text>HomeDetail 页面</Text>
+                <Text>{props.name}</Text>
             </View>
         );
     }
